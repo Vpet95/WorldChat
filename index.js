@@ -10,7 +10,7 @@ var io = require('socket.io')(http);
 var cons = require('consolidate');
 
 // set the port number 
-var port = process.env.PORT || 3000;
+var port = (process.env.PORT != undefined ? process.env.PORT : 3000);
 
 // this line actually serves all files under the public folder 
 app.use('/', express.static(__dirname + '/public'));
