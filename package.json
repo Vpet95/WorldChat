@@ -1,0 +1,23 @@
+{
+  "name": "worldchat",
+  "version": "1.0.0",
+  "description": "A simple chat implementation utilizing the google translate API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Chat",
+    "Google",
+    "translate",
+    "world"
+  ],
+  "author": "Vuk Petrovic",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "consolidate": "^0.14.5",
+    "express": "^4.15.2",
+    "socket.io": "^1.7.3"
+  }
+}
