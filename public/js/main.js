@@ -360,8 +360,13 @@ function applySettings() {
 
 	var username = document.getElementsByClassName('username-input')[0].value;
 	if(username != user.name) {
+		var errorText = document.getElementsByClassName('error-text')[0];
 		if(userList.indexOf(username) != -1 || username == "HelpBot") {
-			document.getElementsByClassName('error-text')[0].style.display = "inline";
+			errorText.textContent = "- Username is already taken";
+			errorText.style.display = "inline";
+		} else if(username.length < 5) {
+			errorText.textContent = "- Username must be at least 5 characters long";
+			errorText.style.display = "inline";
 		} else {
 			nameChanged = true;
 			socket.emit('name-change', JSON.stringify({old: user.name, new: username}));
