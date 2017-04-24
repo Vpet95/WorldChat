@@ -67,7 +67,7 @@ html body {
 }
 
 .chat-input-area {
-	width: calc(100% - 80px)
+	width: calc(100% - 80px);
 	height: 50px;
 	background-color: white;
 	box-shadow: 0px 0px 10px #888888;
