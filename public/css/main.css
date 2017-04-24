@@ -62,12 +62,12 @@ html body {
 	width: calc(100% - 20px);
 	padding: 10px;
 	background-color: transparent;
-	height: calc(100% - 139px);
+	height: calc(100% - 155px);
 	overflow-y: scroll;
 }
 
 .chat-input-area {
-	width: calc(100% - 20px);
+	width: calc(100% - 80px)
 	height: 50px;
 	background-color: white;
 	box-shadow: 0px 0px 10px #888888;
@@ -84,6 +84,9 @@ html body {
 	width: 87%;
 	min-width: 50%;
 	font-size: 120%;
+
+	outline-width: 2px;
+	outline-color: #48b19b;
 }
 
 .chat-input::placeholder {

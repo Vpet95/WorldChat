@@ -161,7 +161,22 @@ socket.on('name-change', function(data) {
 		}
 	}
 
+	for(var i = 0; i < userList.length; i++) {
+		if(userList[i] == data.old) {
+			userList[i] = data.new;
+			break;
+		}
+	}
+
 	if(data.old == user.name) user.name = data.new;
+});
+
+socket.on('username-list', function(data) {
+	if(userList.length > 0) {
+		userList.push(JSON.parse(data).users);
+	} else {
+		userList = JSON.parse(data).users;
+	}
 });
 
 function updateChatUI(msg) {
@@ -400,6 +415,9 @@ function closeSettings() {
 	var overlay = document.getElementsByClassName('overlay')[0];
 	var settingsWindow = document.getElementsByClassName('settings-window')[0];
 
+	var errorText = document.getElementsByClassName('error-text')[0];
+	errorText.textContent = "";
+	errorText.style.display = "none";
 	settingsWindow.style.opacity = 0;
 	overlay.style.opacity = 0;
 

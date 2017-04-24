@@ -40,9 +40,16 @@ io.on('connection', function(socket) {
 		data = JSON.parse(data);
 
 		console.log(data.name + " connected");
+
+		var usernames = [];
+		for(var i = 0; i < users.length; i++) {
+			usernames.push(users[i].user.name);
+		}
+
 		users.push({socket: socket, user: data});
 
 		io.emit('special', "<span style=\"color: #48b19b\">" + data.name + "</span> connected");
+		socket.emit('username-list', JSON.stringify({users: usernames}));
 	});
 
 	socket.on('icon-change', function(icon) {
