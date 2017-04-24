@@ -277,13 +277,7 @@ function setScroll() {
 }
 
 function generateSpecialMessage(msg) {
-	if(msg.indexOf("connected") != -1) {
-		var username = msg.substring(msg.indexOf('>') + 1, msg.indexOf('</'));
-		if(username == user.name) return;
-		else {
-			userList.push(username);
-		}
-	} else if(msg.indexOf("disconnected") != -1) {
+	if(msg.indexOf("disconnected") != -1) {
 		var username = msg.substring(msg.indexOf('>') + 1, msg.indexOf('</'));
 		if(username == user.name) return;
 		else {
@@ -293,6 +287,12 @@ function generateSpecialMessage(msg) {
 					break;
 				}
 			}
+		}
+	} else if(msg.indexOf("connected") != -1) {
+		var username = msg.substring(msg.indexOf('>') + 1, msg.indexOf('</'));
+		if(username == user.name) return;
+		else {
+			userList.push(username);
 		}
 	}
 
