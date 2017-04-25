@@ -108,14 +108,14 @@ function checkForSpecialMessage(msg) {
 
 socket.on('msg', function(msg) {
 	var data = JSON.parse(msg);
-	console.log(shouldTranslate, data.lang, user.lang.language);
+	//console.log(shouldTranslate, data.lang, user.lang.language);
 	if(shouldTranslate && data.lang != user.lang.language) {
 		//https://translation.googleapis.com/language/translate/v2?key=YOUR_API_KEY&source=en&target=de&q=Hello%20world&q=My%20name%20is%20Jeff
 		var textString = data.content.replaceAll(' ', '%20');
 		var queryURL = 'https://translation.googleapis.com/language/translate/v2?key=AIzaSyAOaVDkmKY6a3tabp1NEZI1TMU9KyiAmMM&source=' + data.lang + "&target=" + user.lang.language + "&q=" + textString;
 
-		console.log("Text: " + textString);
-		console.log("Query: " + queryURL);
+		//console.log("Text: " + textString);
+		//console.log("Query: " + queryURL);
 
 		var xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function() {
@@ -141,10 +141,10 @@ socket.on('icon-change', function(data) {
 	var uiIconList = document.body.querySelectorAll('.user-icon');
 	var changedUser = JSON.parse(data);
 
-	console.log(usernameList, uiIconList);
+	//console.log(usernameList, uiIconList);
 
 	for(var i = 0; i < usernameList.length; i++) {
-		console.log(usernameList[i].textContent, changedUser.name)
+		//console.log(usernameList[i].textContent, changedUser.name)
 		if(usernameList[i].textContent == changedUser.name) {
 			uiIconList[i].src = "../assets/" + changedUser.icon;
 		}
