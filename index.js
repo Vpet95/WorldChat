@@ -25,7 +25,7 @@ var CHAT_NORMAL = 0, CHAT_SPECIAL = 1;
 
 io.on('connection', function(socket) {
 	socket.on('msg', function(msg) {
-		console.log(msg);
+		//console.log(msg);
 		var data = JSON.parse(msg);
 
 		if(data.type == CHAT_NORMAL) {
