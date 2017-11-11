@@ -112,7 +112,7 @@ socket.on('msg', function(msg) {
 	if(shouldTranslate && data.lang != user.lang.language) {
 		//https://translation.googleapis.com/language/translate/v2?key=YOUR_API_KEY&source=en&target=de&q=Hello%20world&q=My%20name%20is%20Jeff
 		var textString = data.content.replaceAll(' ', '%20');
-		var queryURL = 'https://translation.googleapis.com/language/translate/v2?key=AIzaSyAOaVDkmKY6a3tabp1NEZI1TMU9KyiAmMM&source=' + data.lang + "&target=" + user.lang.language + "&q=" + textString;
+		var queryURL = 'https://translation.googleapis.com/language/translate/v2?key=AIzaSyADqiCXjIs2CG9GvSkHThXBnI6X3zgCHZM&source=' + data.lang + "&target=" + user.lang.language + "&q=" + textString;
 
 		//console.log("Text: " + textString);
 		//console.log("Query: " + queryURL);
